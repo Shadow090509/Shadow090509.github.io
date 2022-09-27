@@ -1,0 +1,53 @@
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: ;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+}
+.reset {
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(194, 76, 21);
+  color: #000;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: rgb(251, 255, 6);
+  color: rgb(0, 0, 0);
+}
+.rules {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.863);
+}
+.dance {
+  display: flex;
+  justify-content: space-evenly;
+}
+.game {
+  display: flex;
+  justify-content: center;
+}
+.game:hover {
+  cursor: url(https://cdn-icons-png.flaticon.com/128/3504/3504824.png), auto;
+}
+body {
+  font-family: kanit;
+  color: #b37542;
+  background-image: url(https://image.freepik.com/free-vector/spooky-halloween-background-with-pumpkins-in-a-cemetery_1048-3055.jpg);
+  background-color: rgb(0, 0, 0);
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
