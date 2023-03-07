@@ -1,30 +1,36 @@
-alert("I hope you are ready for Hollows Eve...");
-var yourName = prompt("What is your Name?");
-var costume = prompt("What kind of Monster are you this Halloween?");
-alert(`Trick or Treat, ${yourName} the ${costume}. Good luck`);
+var yourName = localStorage.getItem("yourName");
 
-let monster = Math.floor(Math.random() * 9);
-let candy = Math.floor(Math.random() * 9);
+if (!yourName) {
+  yourName = prompt("What's yer name, laddy/lass?");
+  localStorage.setItem("yourName", yourName);
+}
+let costume = " Non-Leprechauns";
+let killer = Math.floor(Math.random() * 9);
+let gold = Math.floor(Math.random() * 9);
 
-if (monster === candy) {
+if (killer === gold) {
   candy = Math.floor(Math.random() * 9);
 }
 
 const treasure = (id) => {
-  if (id === monster) {
-    document.getElementById(monster).innerHTML =
-      '<img src="https://i.gifer.com/UVZ3.gif" height="175px" width="175px">';
-    alert(`${costume}s must not like candy.. better luck next time...`);
-    // window.location.reload();
-    // only works on firefox
-  } else if (id === candy) {
-    document.getElementById(candy).innerHTML =
-      '<img src="https://i.pinimg.com/originals/bb/3e/40/bb3e4072995649e40e7a405b105c5420.gif" height="175px" width="175px">';
-    alert(
-      ` ${costume}s must be good at finding candy! Here is your candy, ${yourName}.... I DARE YOU TO TRY IT AGAIN! `
-    );
-  } else if (id !== candy && id !== monster) {
+  if (id === killer) {
+    document.getElementById(killer).innerHTML =
+      '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHEnxN_ukImFfJupIx_1ArdyqCWGi70w1wES9PRjG5QA&usqp=CAU&ec=48600112" height="175px" width="175px">';
+    setTimeout(() => {
+      alert(
+        `Ah, 'tis a pity that the${costume} didn't fancy the gold. Better luck next time, ${yourName}!`
+      );
+    }, 500);
+  } else if (id === gold) {
+    document.getElementById(gold).innerHTML =
+      '<img src="https://freesvg.org/img/Pot-Of-Gold.png" height="175px" width="175px">';
+    setTimeout(() => {
+      alert(
+        `Faith and begorrah! Ye ${costume}  be mighty good at findin' me pot of gold! Happy St. Patrick's Day, ${yourName}! But don't ye be gettin' too cocky now... I dare ye to try yer luck again! `
+      );
+    }, 500);
+  } else if (id !== gold && id !== killer) {
     document.getElementById(id).innerHTML =
-      '<img src="https://miro.medium.com/max/996/1*o2llW65bX46N5UjmMegNGQ.gif" height="175px" width="175px">';
+      '<img src="https://freesvg.org/img/OneSeventeen-Pot-of-Gold.png" height="175px" width="175px">';
   }
 };
