@@ -41,14 +41,16 @@
 }
 .dance {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .game {
   display: flex;
   justify-content: center;
 }
-
+.page {
+  margin-top: 300px;
+}
 body {
   font-family: kanit;
   color: #0d2710;
@@ -57,4 +59,5 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url("https://freesvg.org/img/PatricksDay_Border__Arvin61r58.png");
 }
