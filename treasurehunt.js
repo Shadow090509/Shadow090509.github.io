@@ -1,6 +1,17 @@
 alert("I hope you are ready for Hollows Eve...");
-var yourName = prompt("What is your Name?");
-var costume = prompt("What kind of Monster are you this Halloween?");
+
+let yourName = localStorage.getItem("yourName");
+let costume = localStorage.getItem("costume");
+
+if (!yourName) {
+  yourName = prompt("What is your Name?");
+  localStorage.setItem("yourName", yourName);
+}
+
+if (!costume) {
+  costume = prompt("What kind of Monster are you this Halloween?");
+  localStorage.setItem("costume", costume);
+}
 alert(`Trick or Treat, ${yourName} the ${costume}. Good luck`);
 
 let monster = Math.floor(Math.random() * 9);
