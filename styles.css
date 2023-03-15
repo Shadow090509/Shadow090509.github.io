@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: ;
 }
 .title {
   display: flex;
@@ -14,10 +13,18 @@
   display: flex;
   justify-content: center;
 }
+.birthday-btn {
+  position: relative;
+  top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .btn {
   padding: 10px;
   border-radius: 5px;
-  background-color: rgb(194, 76, 21);
+  background-color: rgb(200, 235, 28);
   color: #000;
   text-decoration: none;
 }
@@ -28,32 +35,29 @@
 .rules {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.863);
+  background-color: rgba(128, 244, 4, 0.257);
+  width: 550px;
+  margin: 0 auto;
 }
 .dance {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
-.middle {
-  display: flex;
-  justify-content: center;
-  margin-top: 5px;
-}
+
 .game {
   display: flex;
   justify-content: center;
-  background-color: #b86e31;
 }
-.game:hover {
-  cursor: url(https://cdn-icons-png.flaticon.com/128/3504/3504824.png), auto;
+.page {
+  margin-top: 300px;
 }
 body {
   font-family: kanit;
-  color: #b37542;
-  background-image: url(https://image.freepik.com/free-vector/spooky-halloween-background-with-pumpkins-in-a-cemetery_1048-3055.jpg);
-  background-color: rgb(0, 0, 0);
+  color: #0d2710;
+  background-color: rgb(26, 86, 24);
   height: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url("https://freesvg.org/img/PatricksDay_Border__Arvin61r58.png");
 }
