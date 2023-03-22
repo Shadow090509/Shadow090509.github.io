@@ -1,59 +1,50 @@
-var yourName = localStorage.getItem("yourName");
+let yourName = localStorage.getItem("yourName");
+let costume = localStorage.getItem("costume");
+window.onload = function () {
+  alert("I hope you are ready for Hollows Eve...");
+  if (!yourName) {
+    yourName = prompt("What is your Name?");
+    localStorage.setItem("yourName", yourName);
+  }
+  if (!costume) {
+    costume = prompt("What kind of Monster are you this Halloween?");
+    localStorage.setItem("costume", costume);
+  }
+  alert(`Trick or Treat, ${yourName} the ${costume}. Good luck`);
+};
+let monster = Math.floor(Math.random() * 9);
+let candy = Math.floor(Math.random() * 9);
 
-if (!yourName) {
-  yourName = prompt("What's your name?");
-  localStorage.setItem("yourName", yourName);
-}
-let costume = "Egg Hunter";
-let bunny = Math.floor(Math.random() * 9);
-let egg = Math.floor(Math.random() * 9);
-
-if (bunny === egg) {
+if (monster === candy) {
   candy = Math.floor(Math.random() * 9);
 }
 let gameEnded = false;
-let eggCounter = localStorage.getItem("eggCounter") || 0;
-let bunnyCounter = localStorage.getItem("bunnyCounter") || 0;
-
-document.getElementById(
-  "bunnyCounter"
-).innerHTML = `Bunnies Found: ${bunnyCounter}`;
-document.getElementById("eggCounter").innerHTML = `Eggs Found: ${eggCounter}`;
 
 const treasure = (id) => {
   if (gameEnded) {
     return;
   }
-  if (id === bunny) {
-    document.getElementById(bunny).innerHTML =
-      '<img src="https://live.staticflickr.com/7195/6881177214_525ed7c45e_c.jpg" height="175px" width="175px">';
-    setTimeout(() => {
-      alert(
-        `What a shame the Easter Bunny found the egg first! Better luck next time, ${yourName}!`
-      );
-    }, 500);
-    bunnyCounter++;
-    localStorage.setItem("bunnyCounter", bunnyCounter);
-    document.getElementById(
-      "bunnyCounter"
-    ).innerHTML = `Bunnies Found: ${bunnyCounter}`;
-    gameEnded = true;
-  } else if (id === egg) {
-    document.getElementById(egg).innerHTML =
-      '<img src="https://www.publicdomainpictures.net/pictures/320000/nahled/pink-gold-easter-egg.png" height="175px" width="175px">';
-    setTimeout(() => {
-      alert(
-        `The ${costume} found the egg! Happy Easter ${yourName}! How many eggs can you find?`
-      );
-    }, 500);
-    eggCounter++;
-    localStorage.setItem("eggCounter", eggCounter);
-    document.getElementById(
-      "eggCounter"
-    ).innerHTML = `Eggs Found: ${eggCounter}`;
-    gameEnded = true;
-  } else if (id !== egg && id !== bunny) {
-    document.getElementById(id).innerHTML =
-      '<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png" height="175px" width="175px">';
+  const tombstone = document.getElementById(id);
+  if (tombstone.classList.contains("clicked")) {
+    return;
   }
+  if (id === monster) {
+    tombstone.innerHTML =
+      '<img src="https://i.gifer.com/UVZ3.gif" height="175px" width="175px">';
+    alert(
+      `${costume}s must not like candy.. better luck next time ${yourName}...`
+    );
+    gameEnded = true;
+  } else if (id === candy) {
+    tombstone.innerHTML =
+      '<img src="https://i.pinimg.com/originals/bb/3e/40/bb3e4072995649e40e7a405b105c5420.gif" height="175px" width="175px">';
+    alert(
+      `${costume}s must be good at finding candy! Here is your candy, ${yourName}... I DARE YOU TO TRY IT AGAIN! `
+    );
+    gameEnded = true;
+  } else if (id !== candy && id !== monster) {
+    tombstone.innerHTML =
+      '<img src="https://miro.medium.com/max/996/1*o2llW65bX46N5UjmMegNGQ.gif" height="175px" width="175px">';
+  }
+  tombstone.classList.add("clicked");
 };
