@@ -1,19 +1,25 @@
 let yourName = localStorage.getItem("yourName");
 let costume = localStorage.getItem("costume");
-let candyCount = localStorage.getItem("candyCount") || 0; // Initialize count to 0 if it doesn't exist in localStorage
+let candyCount = localStorage.getItem("candyCount") || 0;
 const candyCounter = document.getElementById("candy-counter");
 
 window.onload = function () {
   if (!yourName) {
-    yourName = prompt("What is your Name?");
-    localStorage.setItem("yourName", yourName);
+    setTimeout(() => {
+      yourName = prompt("What is your Name?");
+      localStorage.setItem("yourName", yourName);
+    }, 500);
   }
   if (!costume) {
-    costume = prompt("What kind of Monster are you this Halloween?");
-    localStorage.setItem("costume", costume);
+    setTimeout(() => {
+      costume = prompt("What kind of Monster are you this Halloween?");
+      localStorage.setItem("costume", costume);
+    }, 500);
   }
-  candyCounter.textContent = `Candies found: ${candyCount}`; // Display initial candy count
-  alert(`Trick or Treat, ${yourName} the ${costume}. Good luck`);
+  setTimeout(() => {
+    candyCounter.textContent = `Candies found: ${candyCount}`;
+    alert(`Trick or Treat, ${yourName} the ${costume}. Good luck`);
+  }, 500);
 };
 
 let monster = Math.floor(Math.random() * 9);
@@ -35,20 +41,24 @@ const treasure = (id) => {
   if (id === monster) {
     tombstone.innerHTML =
       '<img src="https://i.gifer.com/UVZ3.gif" height="175px" width="175px">';
-    alert(
-      `${costume}s must not like candy.. better luck next time ${yourName}...`
-    );
     gameEnded = true;
+    setTimeout(() => {
+      alert(
+        `${costume}s must not like candy.. better luck next time ${yourName}...`
+      );
+    }, 500);
   } else if (id === candy) {
     tombstone.innerHTML =
       '<img src="https://i.pinimg.com/originals/bb/3e/40/bb3e4072995649e40e7a405b105c5420.gif" height="175px" width="175px">';
-    candyCount++; // Increment candy count
-    localStorage.setItem("candyCount", candyCount); // Update candy count in localStorage
-    candyCounter.textContent = `Candies found: ${candyCount}`; // Update candy count display
-    alert(
-      `${costume}s must be good at finding candy! Here is your candy, ${yourName}... I DARE YOU TO TRY IT AGAIN! `
-    );
+    candyCount++;
+    localStorage.setItem("candyCount", candyCount);
+    candyCounter.textContent = `Candies found: ${candyCount}`;
     gameEnded = true;
+    setTimeout(() => {
+      alert(
+        `${costume}s must be good at finding candy! Here is your candy, ${yourName}... I DARE YOU TO TRY IT AGAIN! `
+      );
+    }, 500);
   } else if (id !== candy && id !== monster) {
     tombstone.innerHTML =
       '<img src="https://miro.medium.com/max/996/1*o2llW65bX46N5UjmMegNGQ.gif" height="175px" width="175px">';
