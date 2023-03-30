@@ -2,69 +2,64 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title> Egg Hunt</title>
-    <link rel="icon" type="image/x-icon" href="https://freesvg.org/img/mystica_Easter_egg_(Painted).png">
+    <title> Spooky Treasure Hunt</title>
+    <link rel="icon" type="image/x-icon" href="https://freesvg.org/img/painted-halloween-pumpkin-faces.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
- 
   <body>
-    <div class="page">
     <div class="top">
     <div class="title">
-      <img src="https://freesvg.org/img/Plum-Easter-Egg.png" height="100px" alt="easter egg">
-      <h1>      <a href="#game" class="btn">Find the Eggs!</a></h1>
-        <img src="https://freesvg.org/img/EasterEgg5.png" height="100px" alt="easter egg">
+      <img src="https://www.pngmart.com/files/22/Halloween-Ornaments-PNG.gif" height="100px" alt="spider" loading="lazy">
+      <h1>Trick or Treat!</h1>
+        <img src="https://www.pngmart.com/files/22/Halloween-Ornaments-PNG.gif" height="100px" alt="spider" loading="lazy">
       </div>
-  
-      <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/60246/happy-easter-clipart-md.png" height="500px" alt="Happy easter">
-      <div class="birthday-btn">
-        <img class="leprechaun" src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/18904/easter-bunny-with-egg-and-flower-clipart-md.png" height="130px" alt="easter bunny">
-        <a href="https://www.google.com/search?q=what+is+easter+about&rlz=1C1ONGR_enUS1002US1002&oq=What+is+Easter+&aqs=chrome.3.69i57j0i131i433i512j46i512j0i512l3j0i131i433j0i512l2j0i10i512.9236j0j15&sourceid=chrome&ie=UTF-8" class="btn" target="_blank">What is Easter about?</a>
-        <img class="leprechaun" src="https://freesvg.org/img/Easter-Bunny-And-Eggs.png" height="130px" alt="easter bunny">
-      </div>
+      <a href="#game" class="btn">Find the Candy!</a>  
+      <img src="https://www.pngmart.com/files/3/Trick-Or-Treat-PNG-Image.png" height="500px" alt="pumpkin" loading="lazy">
+  <div class="reset">
+    <a href="https://www.foxnews.com/" class="btn" target="_blank">Too Old "Scared" for trick or treating?</a>
+  </div>
   <hr>
     <div class="rules">
-    <h2>Search in the bushes to find the Eggs!</h2>
+    <h2>Search under the Tombstones to find the Candy!</h2>
   <ul>
-    <h3>*Find the Eggs*</h3>
-    <h3>*Don't let the Easter Bunny beat you to the Egg*</h3>
-    <h3>*How many can you find?*</h3>
+    <h3>*Find the Candy to SURVIVE*</h3>
+    <h3>*Avoid the Monster*</h3>
+    <h3>*How many pieces of Candy can you find?*</h3>
+    <div id="candy-counter"></div>
+
   </ul>
     </div>
     <div class="dance">
- <p><span id="bunnyCounter">0</span></p>
-  <img class="leprechaun" src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/14418/easter-eggs-clipart-md.png" height="130px" alt="easter eggs">
-  <p><span id="eggCounter">0</span></p>
-  </div> 
+  <img src="https://thekidshouldseethis.com/wp-content/uploads/2013/10/skeleton-dance.gif" height="130px" alt="dancing skeletons" loading="lazy">
+  <img class="middle" src="https://i2.wp.com/blog.artscase.com/wp-content/uploads/2016/10/skeleton-4.gif?fit=475%2C259&ssl=1" height="120px" alt="dancing skeletons" loading="lazy">
+  <img src="https://c.tenor.com/aW_E-EO9smoAAAAC/halloween-happy.gif" height="130px" alt="dancing skeletons" loading="lazy">,
+  </div>
 <div class="game">
     <table border="1" height="500px" width='500px' id="game">
       <tr>
-        <td id="0" onclick="treasure(0)"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1999423/green-bush-clipart-md.png" height="175px" width="175px" alt="Bush"></td>
-        <td id="1" onclick="treasure(1)"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1999423/green-bush-clipart-md.png" height="175px" width="175px" alt="Bush"></td>
-        <td id="2" onclick="treasure(2)"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1999423/green-bush-clipart-md.png" height="175px" width="175px" alt="Bush"></td>
+        <td id="0" onclick="treasure(0)"><img src="https://freesvg.org/img/rip-tombstone-hi.png" height="175px" alt="Tombstone" loading="lazy"></td>
+        <td id="1" onclick="treasure(1)"><img src="https://freesvg.org/img/rip-tombstone-hi.png" height="175px" alt="Tombstone" loading="lazy"></td>
+        <td id="2" onclick="treasure(2)"><img src="https://freesvg.org/img/rip-tombstone-hi.png" height="175px" alt="Tombstone" loading="lazy"></td>
       </tr>
       <tr>
-        <td id="3" onclick="treasure(3)"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1999423/green-bush-clipart-md.png" height="175px" width="175px" alt="Bush"></td>
-        <td id="4" onclick="treasure(4)"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1999423/green-bush-clipart-md.png" height="175px" width="175px" alt="Bush"></td>
-        <td id="5" onclick="treasure(5)"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1999423/green-bush-clipart-md.png" height="175px" width="175px" alt="Bush"></td>
+        <td id="3" onclick="treasure(3)"><img src="https://freesvg.org/img/rip-tombstone-hi.png" height="175px" alt="Tombstone" loading="lazy"></td>
+        <td id="4" onclick="treasure(4)"><img src="https://freesvg.org/img/rip-tombstone-hi.png" height="175px" alt="Tombstone" loading="lazy"></td>
+        <td id="5" onclick="treasure(5)"><img src="https://freesvg.org/img/rip-tombstone-hi.png" height="175px" alt="Tombstone" loading="lazy"></td>
       </tr>
       <tr>
-        <td id="6" onclick="treasure(6)"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1999423/green-bush-clipart-md.png" height="175px" width="175px" alt="Bush"></td>
-        <td id="7" onclick="treasure(7)"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1999423/green-bush-clipart-md.png" height="175px" width="175px" alt="Bush"></td>
-        <td id="8" onclick="treasure(8)"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1999423/green-bush-clipart-md.png" height="175px"  width="175px" alt="Bush"></td>
+        <td id="6" onclick="treasure(6)"><img src="https://freesvg.org/img/rip-tombstone-hi.png" height="175px" alt="Tombstone" loading="lazy"></td>
+        <td id="7" onclick="treasure(7)"><img src="https://freesvg.org/img/rip-tombstone-hi.png" height="175px" alt="Tombstone" loading="lazy"></td>
+        <td id="8" onclick="treasure(8)"><img src="https://freesvg.org/img/rip-tombstone-hi.png" height="175px" alt="Tombstone" loading="lazy"></td>
       </tr>
     </table>
-  </div>,
+  </div>
   <div class="reset">
-<button class="btn" onclick="location.reload();">Play Again</button>
-
-</div>
+    <a href = '#game' class="btn" onclick="location.reload()">Try Again?</a>
+  </div>
 <footer>
  <hr>
-  <p>&copy Anthony Ramirez  | Treasure Hunt | March 2023</p>
+  <p>&copy Anthony Ramirez | Treasure Hunt | October</p>
   <script type="text/javascript" src="treasurehunt.js"></script>
 </footer>
-</div>
   </body>
-
