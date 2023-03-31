@@ -22,11 +22,11 @@ window.onload = function () {
   }, 500);
 };
 
-let monster = Math.floor(Math.random() * 9);
-let candy = Math.floor(Math.random() * 9);
+let monster = Math.floor(Math.random() * 15);
+let candy = Math.floor(Math.random() * 15);
 
 if (monster === candy) {
-  candy = Math.floor(Math.random() * 9);
+  candy = Math.floor(Math.random() * 15);
 }
 let gameEnded = false;
 
